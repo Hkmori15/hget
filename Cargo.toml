@@ -1,0 +1,28 @@
+[package]
+name = "hget"
+version = "0.1.0"
+description = "Simple and blazing-fast http(s) receiver data utility"
+authors = ["Hkmori15"]
+license = "MIT"
+repository = "https://github.com/Hkmori15/hget"
+edition = "2024"
+
+[[bin]]
+name = "hget"
+path = "src/main.rs"
+
+[dependencies]
+reqwest = { version = "0.12.4", features = ["blocking", "stream"] }
+clap = { version = "4.5.32", features = ["derive"] }
+tokio = { version = "1.44.1", features = ["full"] }
+anyhow = "1.0.97"
+indicatif = "0.17.11"
+url = "2.5.4"
+futures-util = "0.3.31"
+# scraper = "0.23.1"
+
+[profile.release]
+lto = true
+opt-level = 3
+codegen-units = 1
+panic = "abort"
