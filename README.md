@@ -19,36 +19,22 @@ cargo install --path .
 
 ## Usage 🌟:
 ```bash
-hget [options] [url]
-```
-- For help use:
-```bash
-hget --help
-```
-- For output file:
-```bash
-hget https://example.com/target.zip --output current_file.zip
-```
-- For redirects:
-```bash
-hget --max-redirects or -r 5 https://example.com/
-```
+Usage: hget [OPTIONS] <URL>
 
-Default amount redirects is 10
+Arguments:
+  <URL>
 
-- For continue interrupt download:
-```bash
-hget --continue or -c https://example.com/target.zip
+Options:
+  -o, --output <OUTPUT>
+  -v, --verbose
+  -r, --max-redirects <MAX_REDIRECTS>    [default: 10]
+      --no-follow
+  -c, --continue-download
+  -f, --force
+  -R, --recursive
+  -l, --max-depth <MAX_DEPTH>            [default: 5]
+  -j, --max-concurrent <MAX_CONCURRENT>  [default: 5]
+  -d, --same-domain
+  -h, --help                             Print help
+  -V, --version                          Print version 
 ```
-- For force overwriting existing file:
-```bash
-hget --force or -f https://example.com/target.zip
-```
-- For recursive download:
-```bash
-hget --recursive or -R --max_depth or -l 3 --max_concurrent or -j 3 --same_domain or -d https://example.com/target.zip
-```
-1. **--recursive or -R** - download recursively
-2. **--max_depth or -l <amount>** - max depth for files. Default depth - 5
-3. **--max_concurrent or -j <amount>** - concurrent for more speed downloading. Default concurrent - 5
-4. **--same_domain or -d** - download files only from this domain 
