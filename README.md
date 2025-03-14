@@ -21,6 +21,10 @@ cargo install --path .
 ```bash
 hget [options] [url]
 ```
+- For help use:
+```bash
+hget --help
+```
 - For output file:
 ```bash
 hget https://example.com/target.zip --output current_file.zip
